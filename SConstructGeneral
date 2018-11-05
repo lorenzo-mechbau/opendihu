@@ -41,7 +41,7 @@ sconsconfig.select(
     #packages.flex(required=False),    # "Fast Lexical Analyzer" needed by PTScotch which is needed by MUMPS which is needed by Petsc
     packages.PETSc(required=True),   # Petsc depends on LAPACK/BLAS and bison
     #packages.bzip2(required=False),
-    #packages.Python(required=True),  # This compiles python 3.6 from source to be able to embedd the python interpreter in opendihu. All further python packages are installed in this installation tree under dependencies/python/install
+    packages.Python(required=True),  # This compiles python 3.6 from source to be able to embedd the python interpreter in opendihu. All further python packages are installed in this installation tree under dependencies/python/install
     #packages.Cython(required=False), # Cython is a dependency for the numpy C API
     #packages.NumpyC(required=False), # The numpy C API. Numpy is needed such that the python config files that are parsed by opendihu can load the numpy package. This needs to be compiled from source and linked to the same LAPACK/BLAS package that also opendihu uses, otherwise there will be errors.
     #packages.SciPy(required=False),  # Scipy to also make it available in the config python files. This just installs from a whl using pip, so no extra compilation.
