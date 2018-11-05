@@ -1,7 +1,7 @@
 #include "control/dihu_context.h"
 
 #include <Python.h>  // this has to be the first included header
-#include <python_home.h>  // defines PYTHON_HOME_DIRECTORY
+//#include <python_home.h>  // defines PYTHON_HOME_DIRECTORY
 #include <omp.h>
 
 #include <fstream>
@@ -116,11 +116,11 @@ DihuContext::DihuContext(int argc, char *argv[], bool doNotFinalizeMpi, bool set
     Py_SetProgramName(programNameWChar);  /* optional but recommended */
 
     // set python home and path, apparently this is not needed
-    VLOG(1) << "python home directory: \"" << PYTHON_HOME_DIRECTORY << "\"";
-    std::string pythonSearchPath = PYTHON_HOME_DIRECTORY;
+    //VLOG(1) << "python home directory: \"" << PYTHON_HOME_DIRECTORY << "\"";
+    //std::string pythonSearchPath = PYTHON_HOME_DIRECTORY;
     //std::string pythonSearchPath = std::string("/store/software/opendihu/dependencies/python/install");
-    const wchar_t *pythonSearchPathWChar = Py_DecodeLocale(pythonSearchPath.c_str(), NULL);
-    Py_SetPythonHome((wchar_t *)pythonSearchPathWChar);
+    //const wchar_t *pythonSearchPathWChar = Py_DecodeLocale(pythonSearchPath.c_str(), NULL);
+    //Py_SetPythonHome((wchar_t *)pythonSearchPathWChar);
 
     // initialize python
     Py_Initialize();
